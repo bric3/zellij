@@ -1,12 +1,9 @@
-use std::sync::mpsc::channel;
-use std::time::Instant;
-use std::unimplemented;
+use crate::{common::SenderWithContext, pty_bus::VteBytes, tab::Pane, wasm_vm::PluginInstruction};
 
-use crate::common::thread_bus::SenderWithContext;
 use crate::panes::{PaneId, PositionAndSize};
-use crate::pty::VteBytes;
-use crate::tab::Pane;
-use crate::wasm_vm::PluginInstruction;
+
+use std::time::Instant;
+use std::{sync::mpsc::channel, unimplemented};
 
 pub struct PluginPane {
     pub pid: u32,
